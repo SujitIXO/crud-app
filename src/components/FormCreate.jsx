@@ -7,6 +7,7 @@ const FormCreate = () => {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
+    const [action, setAction] = useState(false)
 
     const navigate = useNavigate();
 
@@ -34,7 +35,8 @@ const FormCreate = () => {
     <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded shadow-md">
       <h2 className="text-2xl font-bold mb-4">Form</h2>
       <form onSubmit={handleSubmit}>
-        <div className="mb-4">
+        {
+          action ? <div className="mb-4">
           <label htmlFor="id" className="block text-gray-700 font-bold mb-2">
             ID
           </label>
@@ -47,6 +49,9 @@ const FormCreate = () => {
             className="block w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
           />
         </div>
+        : null
+        }
+        
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
             Name

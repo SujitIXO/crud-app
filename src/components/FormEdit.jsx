@@ -11,6 +11,8 @@ const FormEdit = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
 
+  const [action, setAction] = useState(false)
+
   useEffect(() => {
     fetch(`http://localhost:8000/employee/${id}`)
       .then((res) => {
@@ -54,10 +56,11 @@ const FormEdit = () => {
 
 
   return (
-    <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded shadow-md">
+    <div className="w-full mx-auto mt-8 p-6 bg-white rounded shadow-md">
     <h2 className="text-2xl font-bold mb-4">Edit Employee Page</h2>
     <form onSubmit={handleSubmit}>
-      <div className="mb-4">
+      {
+        action ?  <div className="mb-4">
         <label htmlFor="id" className="block text-gray-700 font-bold mb-2">
           ID
         </label>
@@ -69,7 +72,9 @@ const FormEdit = () => {
           disabled
           className="block w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
         />
-      </div>
+      </div> :
+      null
+      }
       <div className="mb-4">
         <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
           Name

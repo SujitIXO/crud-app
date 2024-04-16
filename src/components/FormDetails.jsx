@@ -26,9 +26,10 @@ const FormDetails = () => {
       <div className="max-w-md bg-white shadow-md rounded-md overflow-hidden">
         <h1 className="text-center text-xl font-bold p-4">View Details Of Employee</h1>
         <div className="p-4">
-          <h2 className="text-xl font-bold mb-2">{showEmpData.name}</h2>
-          <p className="text-gray-600">Email: {showEmpData.email}</p>
-          <p className="text-gray-600">Phone: {showEmpData.phone}</p>
+          <p className="text-xl font-bold mb-2">ID: {showEmpData.id}</p>
+          <h2 className="text-lg text-gray-600 mb-2">Name: {showEmpData.name}</h2>
+          <p className="text-lg text-gray-600 mb-2">Email: {showEmpData.email}</p>
+          <p className="text-lg text-gray-600">Phone: {showEmpData.phone}</p>
         </div>
         <div className="px-4 py-2 bg-gray-100">
           <button onClick={() => navigate("/home")} className="text-sm text-green-700 ml-2">Back</button>

@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# CRUD App using React and LocalStorage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple CRUD app that allows users to Signin and Signup first to Create, Read, Update, and Delete data stored in LocalStorage.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+* User can Signin and Signup
+* Create, Read, Update and Delete all the data stored in LocalStorage
+* Simple and easy-to-use interface
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To install this app, you will need to have Node.js and npm installed. Once you have those installed, you can run the following command:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* npm install
 
-### `npm test`
+This will install all of the dependencies required for this app.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `npm run build`
+To run this app, you can run the following command:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This will start the app on your local machine. You can then visit `http://localhost:3000` in your web browser to view the app.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+And for running the json-server, you can run the following command:
 
-### `npm run eject`
+* npx json-server --watch db.json --port (any port number you can give ex:- 3000, 8000, 8080)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This will run the json server on your local machine. You can then visit `http://localhost:${port}/${arrayname}` in your web browser to view the app.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Example:- `http://localhost:8000/employee`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Documentation
 
-## Learn More
+The code for this app is documented in the `src` directory. The main components of the app are:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* `App.js`: This is the main component of the app. It renders the header, footer, and main content area.
+* `SigninPage.jsx`: This component is used for user authentication.  
+* `Home.js`: This component renders a list of all of the data stored in LocalStorage.
+* `FormCreate.js`: This component allows users to create new data and store it in LocalStorage.
+* `FormEdit.js`: This component allows users to update existing data stored in LocalStorage.
+* `FormDetails.js`: This component allows users to show individual details.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Troubleshooting
 
-### Code Splitting
+If you are having any problems with this app, please check the documentation or open an issue on GitHub.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## License
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This app is licensed under the MIT License.
