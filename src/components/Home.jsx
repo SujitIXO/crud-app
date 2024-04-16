@@ -5,7 +5,15 @@ const Home = () => {
   const [empdata, setEmpData] = useState(null);
   const navigate = useNavigate();
 
+
   useEffect(() => {
+    // Checked if the user is loggedin or not
+    const loggedInUser = localStorage.getItem("loggedInUser");
+
+    if (!loggedInUser) {
+      navigate("/");
+    }
+
     fetch("http://localhost:8000/employee")
       .then((res) => {
         return res.json();
@@ -17,7 +25,7 @@ const Home = () => {
       .catch((err) => {
         console.log(err.message);
       });
-  }, []);
+  }, [navigate]);
 
   const handleLogout = () => {
     localStorage.removeItem("loggedInUser");
