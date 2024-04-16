@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom';
+import InputField from './InputField';
 
 
 const FormEdit = () => {
@@ -61,96 +62,65 @@ const FormEdit = () => {
       });
   }
 
+  const genderOptions = [
+    { value: "", label: "Select gender" },
+    { value: "male", label: "Male" },
+    { value: "female", label: "Female" },
+    { value: "other", label: "Other" },
+  ];
+
 
   return (
     <div className="flex flex-col justify-center items-center h-screen mx-8 md:mx-0">
     <form onSubmit={handleSubmit} className='w-full md:w-1/3 bg-gray-100 p-8 rounded-lg shadow-md'>
     <h2 className="text-2xl font-bold mb-4">Edit Employee Page</h2>
       {
-        action ?  <div className="mb-4">
-        <label htmlFor="id" className="block text-gray-700 font-bold mb-2">
-          ID
-        </label>
-        <input
+        action ? 
+         <InputField
+          label="ID"
           type="text"
-          id="id"
           name="id"
-          value={id}
-          disabled
-          className="block w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
-        />
-      </div> :
+          value={empid}
+          onChange={(e) => setEmpid(e.target.value)}
+        /> :
       null
       }
-      <div className="mb-4">
-        <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
-          Name
-        </label>
-        <input
+       <InputField
+          label="Name"
           type="text"
-          id="name"
           name="name"
           value={name}
-          onChange={e => setName(e.target.value)}
-          className="block w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
+          onChange={(e) => setName(e.target.value)}
         />
-      </div>
-      <div className="mb-4">
-        <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
-          Email
-        </label>
-        <input
+      <InputField
+          label="Email"
           type="email"
-          id="email"
           name="email"
           value={email}
-          onChange={e => setEmail(e.target.value)}
-          className="block w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
+          onChange={(e) => setEmail(e.target.value)}
         />
-      </div>
-      <div className="mb-4">
-        <label htmlFor="phone" className="block text-gray-700 font-bold mb-2">
-          Phone
-        </label>
-        <input
+        <InputField
+          label="Phone"
           type="number"
-          id="phone"
           name="phone"
           value={phone}
-          onChange={e => setPhone(e.target.value)}
-          className="block w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
+          onChange={(e) => setPhone(e.target.value)}
         />
-      </div>
-      <div className="mb-4">
-        <label htmlFor="gender" className="block text-gray-700 font-bold mb-2">
-          Gender
-        </label>
-        <select
-          id="gender"
+        <InputField
+          label="Gender"
+          type="select"
           name="gender"
           value={gender}
-          onChange={e => setGender(e.target.value)}
-          className="block w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
-        >
-          <option value="">Select gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div className="mb-4">
-        <label htmlFor="designation" className="block text-gray-700 font-bold mb-2">
-          Designation
-        </label>
-        <input
+          options={genderOptions}
+          onChange={(e) => setGender(e.target.value)}
+        />
+        <InputField
+          label="Designation"
           type="text"
-          id="designation"
           name="designation"
           value={designation}
-          onChange={e => setDesignation(e.target.value)}
-          className="block w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
+          onChange={(e) => setDesignation(e.target.value)}
         />
-      </div>
       <button
         type="submit"
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
