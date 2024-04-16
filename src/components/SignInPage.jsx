@@ -33,8 +33,9 @@ const SignInSignUpForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
-      <form onSubmit={handleSignInSignUp} className="w-full mx-8 md:mx-0 md:w-1/3 bg-gray-100 p-8 rounded-lg shadow-md">
+    <div className="flex flex-col justify-center items-center h-screen">
+      <h2 className="text-2xl font-bold mb-4">CRUD Application for Employee Table</h2>
+      <form onSubmit={handleSignInSignUp} className="w-full mx-8 lg:mx-0 lg:w-1/3 bg-gray-100 p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-bold mb-4">{isSignIn ? "Sign In" : "Sign Up"}</h2>
         <div className="mb-4">
           <label htmlFor="email" className="block mb-2">Email</label>

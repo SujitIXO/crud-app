@@ -10,6 +10,9 @@ const FormEdit = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
+  const [gender, setGender] = useState("");
+  const [designation, setDesignation] = useState("");
+
 
   const [action, setAction] = useState(false)
 
@@ -24,6 +27,8 @@ const FormEdit = () => {
         setName(res.name);
         setEmail(res.email);
         setPhone(res.phone);
+        setGender(res.gender);
+        setDesignation(res.designation)
       })
       .catch((err) => {
         console.log(err.message);
@@ -44,7 +49,9 @@ const FormEdit = () => {
           body: JSON.stringify({
               name: name,
               email: email,
-              phone: phone
+              phone: phone,
+              gender: gender,
+              designation: designation
           })
       }).then((res) => {
           alert("saved successfully")
@@ -111,6 +118,36 @@ const FormEdit = () => {
           name="phone"
           value={phone}
           onChange={e => setPhone(e.target.value)}
+          className="block w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
+        />
+      </div>
+      <div className="mb-4">
+        <label htmlFor="gender" className="block text-gray-700 font-bold mb-2">
+          Gender
+        </label>
+        <select
+          id="gender"
+          name="gender"
+          value={gender}
+          onChange={e => setGender(e.target.value)}
+          className="block w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
+        >
+          <option value="">Select gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div className="mb-4">
+        <label htmlFor="designation" className="block text-gray-700 font-bold mb-2">
+          Designation
+        </label>
+        <input
+          type="text"
+          id="designation"
+          name="designation"
+          value={designation}
+          onChange={e => setDesignation(e.target.value)}
           className="block w-full px-4 py-2 border rounded focus:outline-none focus:border-blue-500"
         />
       </div>

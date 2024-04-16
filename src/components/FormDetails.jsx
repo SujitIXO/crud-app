@@ -30,6 +30,8 @@ const FormDetails = () => {
           <h2 className="text-lg text-gray-600 mb-2">Name: {showEmpData.name}</h2>
           <p className="text-lg text-gray-600 mb-2">Email: {showEmpData.email}</p>
           <p className="text-lg text-gray-600">Phone: {showEmpData.phone}</p>
+          <p className="text-lg text-gray-600">Gender: {showEmpData.gender}</p>
+          <p className="text-lg text-gray-600">Designation: {showEmpData.designation}</p>
         </div>
         <div className="px-4 py-2 bg-gray-100">
           <button onClick={() => navigate("/home")} className="text-sm text-green-700 ml-2">Back</button>

@@ -1,16 +1,20 @@
 {
   "employee": [
     {
-      "id": "ff88",
       "name": "james",
       "email": "james@gmail.com",
-      "phone": "8904563789"
+      "phone": "8904563789",
+      "gender": "male",
+      "designation": "Full Stack Developer",
+      "id": "ff88"
     },
     {
-      "id": "508a",
-      "name": "sujit mishra",
-      "email": "sujit@gmail.com",
-      "phone": "7890456780"
+      "id": "904c",
+      "name": "N/A",
+      "email": "N/A",
+      "phone": "N/A",
+      "gender": "male",
+      "designation": "N/A"
     }
   ]
 }
