@@ -1,28 +1,18 @@
 {
-  "employee": [
+  "employees": [
     {
-      "name": "james",
-      "email": "james@gmail.com",
-      "phone": "8904563700",
-      "gender": "male",
-      "designation": "Full Stack Developer",
-      "id": "ff88"
+      "name": "sujit",
+      "email": "sujit@gmail.com",
+      "phone": "7008493900",
+      "company": "companyB",
+      "id": "28e9"
     },
     {
-      "id": "904c",
-      "name": "N/A",
-      "email": "N/A",
-      "phone": "N/A",
-      "gender": "male",
-      "designation": "N/A"
-    },
-    {
-      "name": "skm",
-      "email": "skm@gmail.com",
-      "phone": "8990675478",
-      "gender": "male",
-      "designation": "Full Stack Developer",
-      "id": "0717"
+      "name": "johny",
+      "email": "john@gmail.com",
+      "phone": "7008493948",
+      "company": "companyA",
+      "id": "3918"
     }
   ]
 }

@@ -14,7 +14,7 @@ const SignInSignUpForm = () => {
       const user = users.find((u) => u.email === email && u.password === password);
       if (user) {
         localStorage.setItem("loggedInUser", JSON.stringify(user));
-        navigate("/home");
+        navigate("/homepage");
       } else {
         alert("Invalid email or password. Please try again.");
       }
@@ -27,7 +27,7 @@ const SignInSignUpForm = () => {
         localStorage.setItem("users", JSON.stringify([...users, newUser]));
         alert("Sign up successful");
         setIsSignIn(true);
-        navigate("/home");
+        navigate("/homepage");
       }
     }
   };
