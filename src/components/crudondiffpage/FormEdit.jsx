@@ -1,6 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import InputField from './InputField';
+import InputField from '../InputField';
 
 
 const FormEdit = () => {

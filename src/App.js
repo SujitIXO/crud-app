@@ -1,24 +1,34 @@
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-// import Home from './components/Home';
-import SignInSignUpForm from './components/SignInPage';
-// import FormCreate from './components/FormCreate';
-// import FormEdit from './components/FormEdit';
-// import FormDetails from './components/FormDetails';
-import Homepage from './components/Homepage';
+import { useState, useEffect } from "react";
+import { Route, Routes, Navigate } from "react-router-dom";
+import "./App.css";
+import SignInSignUpForm from "./components/crudondiffpage/SignInPage";
+import Homepage from "./components/crudonsamepage/Homepage";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import SignInSignUpPage from "./components/crudonsamepage/SignInSignUpPage";
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   return (
-   <>
-   <Routes>
-   <Route path='/' element={<SignInSignUpForm />} />
-   <Route path='/homepage' element={<Homepage />} />
-    {/* <Route path='/home' element={<Home />} />
-    <Route path='/home/employee/create' element={<FormCreate />} />
-    <Route path='/home/employee/edit/:id' element={<FormEdit />} />
-    <Route path='/home/employee/detail/:id' element={<FormDetails />} /> */}
-   </Routes>
-   </>
+    <>
+      <Routes>
+        <Route path="/" element={<SignInSignUpPage />} />
+        {user ? (
+          <Route path="/homepage" element={<Homepage />} />
+        ) : (
+          <Route path="*" element={<Navigate to="/" />} />
+        )}
+      </Routes>
+    </>
   );
 }
 

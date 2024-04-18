@@ -4,12 +4,12 @@ import InputField from "./InputField";
 import Navbar from "./Navbar";
 
 const Homepage = () => {
+  const [empData, setEmpData] = useState([]);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [company, setCompany] = useState("");
-  const [empData, setEmpData] = useState([]);
-  const [editId, setEditId] = useState(-1);
+  const [editId, setEditId] = useState(1);
   const [editedName, setEditedName] = useState("");
   const [editedEmail, setEditedEmail] = useState("");
   const [editedPhone, setEditedPhone] = useState("");
@@ -58,6 +58,7 @@ const Homepage = () => {
   const handleUpdate = (id) => {
     axios
       .put(`http://localhost:8000/employees/${id}`, {
+        id,
         name: editedName,
         email: editedEmail,
         phone: editedPhone,
@@ -223,12 +224,12 @@ const Homepage = () => {
                       Update
                     </button>
                   ) : (
-                    <div className="flex justify-between">
+                    <div className="flex justify-between gap-4">
                       <button
                         onClick={() => editHandler(item.id)}
                         className="px-4 py-2 bg-sky-400 text-center"
                       >
-                        Update
+                        Edit
                       </button>
                       <button
                         onClick={() => deleteHandler(item.id)}
